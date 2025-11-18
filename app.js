@@ -20,6 +20,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 
+
 // Colección de estudiantes
 const estudiantesCol = collection(db, "estudiantes");
 
@@ -187,7 +188,7 @@ async function mostrarProgreso(id) {
 
   if (!est) return;
 
-  graficaTitulo.textContent = Progreso de ${est.nombre} (Semestre ${est.semestre});
+  graficaTitulo.textContent = `Progreso de ${est.nombre} (Semestre ${est.semestre})`;
 
   const labels = ["Examen 1", "Examen 2", "Examen 3", "Examen 4"];
   const data = [est.examen1, est.examen2, est.examen3, est.examen4];
